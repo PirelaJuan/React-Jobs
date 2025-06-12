@@ -1,7 +1,4 @@
 import React from 'react'
-
-import HomePage from './pages/HomePage.jsx'
-import MainLayout from './layouts/MainLayout.jsx';
 import {
   Route, 
   createBrowserRouter, 
@@ -9,10 +6,17 @@ import {
   RouterProvider
 } from 'react-router-dom'
 
+import HomePage from './pages/HomePage.jsx'
+import MainLayout from './layouts/MainLayout.jsx';
+import JobPages from './pages/JobsPage.jsx';
+
+
+
 const router = createBrowserRouter(
   createRoutesFromElements(
   <Route path='/' element={<MainLayout/>}>
-    <Route path='' element={<HomePage/>}/>
+    <Route index element={<HomePage/>}/>
+    <Route path='/jobs' element={<JobPages/>}/>
   </Route>
   )
 );
